@@ -21,3 +21,7 @@ const clearForm = () => {
   document.querySelector("#title").value = "";
   document.querySelector("#description").value = "";
 };
+
+const loadNotes = (notes) => {
+  notes.forEach(note => appendNote(note));
+}

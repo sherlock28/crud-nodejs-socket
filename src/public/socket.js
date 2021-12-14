@@ -8,3 +8,5 @@ socket.on("server:newnote", (note) => {
   appendNote(note);
   clearForm();
 });
+
+socket.on("server:loadnotes", loadNotes);
