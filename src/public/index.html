@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="main.css" />
     <title>CRUD with Socket.io</title>
   </head>
-  <body>
-    <div class="container h-100">
+  <body class="background-gradient">
+    <div class="container h-100 mt-3">
       <h1>Crud Websocket.io</h1>
       <div class="row h-100">
         <div class="col-md-4 my-auto">
@@ -28,19 +28,22 @@
                 placeholder="Write a title"
                 class="form-control rounded-0 mb-3"
                 autofocus
+                required
               />
-              <textarea name="description" id="description"  rows="2" class="form-control rounded-0 mb-3" placeholder="Write a description"></textarea>
+              <textarea name="description" id="description"  rows="2" class="form-control rounded-0 mb-3" placeholder="Write a description" required></textarea>
               <button class="btn btn-dark rounded-0">Save</button>
             </div>
           </form>
         </div>
         <div class="col-md-8">
-          <div id="notesList">notes</div>
+          <div id="notesList"></div>
         </div>
       </div>
     </div>
 
     <script src="/socket.io/socket.io.min.js"></script>
+    <script src="./ui.js"></script>
+    <script src="./socket.js"></script>
     <script src="main.js"></script>
   </body>
 </html>

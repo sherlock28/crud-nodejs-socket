@@ -19,7 +19,7 @@ io.on("connection", (socket) => {
       id: uuid(),
       ...data,
     });
-    io.emit("server:newnote", notes);
+    io.emit("server:newnote", data);
   });
 });
 

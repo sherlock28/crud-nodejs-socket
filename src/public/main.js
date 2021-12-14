@@ -1,7 +1,4 @@
-const socket = io("http://localhost:3000");
-
 const notesForm = document.querySelector("#notesForm");
-const notesList = document.querySelector("#notesList");
 
 notesForm.addEventListener("submit", (e) => {
   e.preventDefault();

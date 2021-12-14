@@ -1,12 +1,23 @@
+const notesList = document.querySelector("#notesList");
+
 const appendNote = (note) => {
-  const noteElement = document.createElement("div");
-  noteElement.classList.add("note");
-  noteElement.innerHTML = `
-        <div class="note-header">
-        <div class="note-title">${note.title}</div>
-        <div class="note-date">${note.date}</div>
+  notesList.innerHTML += `
+        <div class="card card-body rounded-0 mb-2">
+          <div class="d-flex justify-content-between">
+            <h1 class="h3 card-title">${note.title}</h1>
+
+            <div>
+              <button class="btn btn-danger">Delete</button>
+              <button class="btn btn-secondary">Update</button>
+            </div>
+
+          </div>
+          <p>${note.description}</p>
         </div>
-        <div class="note-body">${note.body}</div>
     `;
-  document.querySelector(".notes").appendChild(noteElement);
+};
+
+const clearForm = () => {
+  document.querySelector("#title").value = "";
+  document.querySelector("#description").value = "";
 };
