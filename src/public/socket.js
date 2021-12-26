@@ -5,7 +5,7 @@ const saveNote = (note) => {
 };
 
 const deleteNote = (id) => {
-  console.log({id})
+  socket.emit("client:deletenote", id);
 };
 
 socket.on("server:newnote", (note) => {
