@@ -29,6 +29,18 @@ io.on("connection", (socket) => {
     notes = notes.filter((note) => note.id !== id);
     io.emit("server:loadnotes", notes);
   });
+
+  socket.on("client:getNote", (id) => {
+    const note = notes.find((note) => note.id === id);
+    socket.emit("server:pushNote", note);
+  });
+
+  socket.on("client:updatenote", (data) => {
+    const { note, id } = data;
+    const index = notes.findIndex((note) => note.id === id);
+    notes[index] = { ...note, id };
+    io.emit("server:loadnotes", notes);
+  });
 });
 
 httpServer.listen(3000, () => {
