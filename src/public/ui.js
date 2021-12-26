@@ -1,5 +1,7 @@
 const notesList = document.querySelector("#notesList");
 
+let savedId = "";
+
 const noteUI = (note) => {
   const div = document.createElement("div");
   div.innerHTML = `
@@ -16,8 +18,10 @@ const noteUI = (note) => {
 `;
 
   const btnDelete = div.querySelector(".delete");
+  const btnUpdate = div.querySelector(".update");
 
   btnDelete.addEventListener("click", () => deleteNote(btnDelete.dataset.id));
+  btnUpdate.addEventListener("click", () => getNote(btnUpdate.dataset.id));
 
   return div;
 };

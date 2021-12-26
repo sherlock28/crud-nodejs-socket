@@ -7,5 +7,10 @@ notesForm.addEventListener("submit", (e) => {
     description: document.querySelector("#description").value,
   };
 
-  saveNote(note);
+  if (savedId) {
+    updateNote(note, savedId);
+    savedId = "";
+  } else {
+    saveNote(note);
+  }
 });
