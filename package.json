@@ -5,11 +5,12 @@
   "main": "src/",
   "scripts": {
     "dev": "nodemon src/ --exec babel-node --ignore src/public",
-    "start": "node src/"
+    "start": "node dist/",
+    "build": "babel src/ -d dist/ && ncp src/public/index.html dist/public/index.html && ncp src/public/main.css dist/public/main.css"
   },
   "repository": {
     "type": "git",
-    "url": "https://"
+    "url": "https://github.com/sherlock28/crud-nodejs-socket"
   },
   "keywords": [
     "NodeJs",
@@ -28,6 +29,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "ncp": "^2.0.0",
     "socket.io": "^4.4.0",
     "uuid": "^8.3.2"
   }
