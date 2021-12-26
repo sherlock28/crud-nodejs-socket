@@ -17,11 +17,12 @@ io.on("connection", (socket) => {
   socket.emit("server:loadnotes", notes);
 
   socket.on("client:newnote", (data) => {
-    notes.push({
+    const note = {
       id: uuid(),
       ...data,
-    });
-    io.emit("server:newnote", data);
+    };
+    notes.push(note);
+    io.emit("server:newnote", note);
   });
 });
 
