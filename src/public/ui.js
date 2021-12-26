@@ -28,6 +28,7 @@ const clearForm = () => {
 };
 
 const renderNotes = (notes) => {
+  notesList.innerHTML = "";
   notes.forEach((note) => {
     notesList.append(noteUI(note));
   });
