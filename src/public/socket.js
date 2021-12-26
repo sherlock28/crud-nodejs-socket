@@ -4,9 +4,13 @@ const saveNote = (note) => {
   socket.emit("client:newnote", note);
 };
 
+const deleteNote = (id) => {
+  console.log({id})
+};
+
 socket.on("server:newnote", (note) => {
   appendNote(note);
   clearForm();
 });
 
-socket.on("server:loadnotes", loadNotes);
+socket.on("server:loadnotes", renderNotes);
