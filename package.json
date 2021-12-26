@@ -4,7 +4,7 @@
   "description": "Ejemplo de crud con NodeJs y websocket",
   "main": "src/",
   "scripts": {
-    "dev": "nodemon src/ --exec babel-node",
+    "dev": "nodemon src/ --exec babel-node --ignore src/public",
     "start": "node src/"
   },
   "repository": {
